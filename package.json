@@ -1,0 +1,36 @@
+{
+  "name": "hodiny",
+  "version": "0.0.0-development",
+  "description": "Yet another synchronizable clock",
+  "author": "Alexandre Breteau <contact@seldszar.fr> (https://seldszar.fr)",
+  "repository": "seldszar/hodiny",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky install",
+    "test": "prettier --check ."
+  },
+  "files": [
+    "index.d.ts",
+    "index.js"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*": "prettier --write"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
+}
