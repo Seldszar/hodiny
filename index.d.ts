@@ -7,6 +7,13 @@ interface ClockOptions {
   fetchTime?(): number | Promise<number>;
 
   /**
+   * Number of samples to fetch during each synchronization.
+   *
+   * @default 10
+   */
+  sampleCount?: number;
+
+  /**
    * Delay between each synchronization.
    * Set to `Number.POSITIVE_INFINITY` to disable it.
    *
@@ -15,7 +22,7 @@ interface ClockOptions {
   interval?: number;
 }
 
-export class Clock {
+export class Clock extends EventTarget {
   /**
    * Current time offset.
    */
